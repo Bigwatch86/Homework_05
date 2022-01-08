@@ -17,6 +17,7 @@ public class RegistrationFormWithFaker {
     String firstName = faker.name().firstName();
     String lastName = faker.name().lastName();
     String userEmail = faker.internet().emailAddress();
+    String phoneNumber = faker.phoneNumber().subscriberNumber(10);
     String adress = faker.address().fullAddress();
 
 
@@ -35,7 +36,7 @@ public class RegistrationFormWithFaker {
         registrationPage.typeLastName(lastName);
         registrationPage.typeEmail(userEmail);
         registrationPage.setGender();
-        registrationPage.typeNumber("9991234567");
+        registrationPage.typeNumber(phoneNumber);
 
         CalendarFilling calendarFilling = new CalendarFilling();
         calendarFilling.setDate("12", "August", "1986");
@@ -55,7 +56,7 @@ public class RegistrationFormWithFaker {
         registrationPage.checkResultValue(lastName);
         registrationPage.checkResultValue(userEmail);
         registrationPage.checkResultValue("Other");
-        registrationPage.checkResultValue("9991234567");
+        registrationPage.checkResultValue(phoneNumber);
         registrationPage.checkResultValue("12 August,1986");
         registrationPage.checkResultValue("English, Computer Science");
         registrationPage.checkResultValue("Sports, Music");
