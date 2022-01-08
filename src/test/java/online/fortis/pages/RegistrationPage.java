@@ -50,6 +50,7 @@ public class RegistrationPage {
     }
 
     public void setSubject(String subject){
+
         subjectsInput.setValue(subject).pressEnter();
     }
 
